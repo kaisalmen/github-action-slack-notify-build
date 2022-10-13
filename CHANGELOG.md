@@ -1,3 +1,10 @@
+# 2.0.0
+
+- Not released on marketplace
+- Switch from `yarn` to `npm`
+- Remove semantic release from build pipeline
+- Update all dependencies
+
 # [1.5.0](https://github.com/voxmedia/github-action-slack-notify-build/compare/v1.4.0...v1.5.0) (2021-03-05)
 
 
