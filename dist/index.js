@@ -19435,6 +19435,7 @@ const { buildSlackAttachments, formatChannelName } = __nccwpck_require__(1608);
 
     const args = {
       channel: channelId,
+      text: 'GHA Actions message',
       attachments,
     };
 

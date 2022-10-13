@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Notify slack
+      - name: Notify slack start
         # Don't attempt to send Slack notifications on fork PRs which don't have access to secrets
         if: env.SLACK_BOT_TOKEN
         id: slack
@@ -26,8 +26,8 @@ jobs:
         uses: ./
         with:
           channel_id: '#gha-testing'
-          status: STARTED
-          color: good
+          status: STARTING
+          color: warning
       - name: npm install, build and test
         run: |
           npm ci
@@ -41,7 +41,8 @@ jobs:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         uses: ./
         with:
-          message_id: ${{ steps.slack.outputs.message_id }}
+          # Updates existing message from the first step
           channel_id: '#gha-testing'
+          message_id: ${{ steps.slack.outputs.message_id }}          
           status: SUCCESS
           color: good
