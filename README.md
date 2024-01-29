@@ -9,7 +9,7 @@ A [Slack bot token](https://api.slack.com/docs/token-types) is required to use t
 ## Usage
 
 ```yaml
-uses: kaisalmen/github-action-slack-notify-build@v1
+uses: kaisalmen/github-action-slack-notify-build@v3
 with:
   channel: app-alerts
   status: STARTED
@@ -72,7 +72,7 @@ You can use the `success()` and `failure()` conditional checks within your workf
   if: success()
   env:
     SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
-  uses: voxmedia/github-action-slack-notify-build@v1
+  uses: kaisalmen/github-action-slack-notify-build@v3
   with:
     channel: app-alerts
     status: SUCCESS
@@ -82,7 +82,7 @@ You can use the `success()` and `failure()` conditional checks within your workf
   if: failure()
   env:
     SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
-  uses: voxmedia/github-action-slack-notify-build@v1
+  uses: kaisalmen/github-action-slack-notify-build@v3
   with:
     channel: app-alerts
     status: FAILED

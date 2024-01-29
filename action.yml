@@ -1,4 +1,4 @@
-name: 'Slack Notify Build'
+name: 'Slack Notify Build Node 20'
 description: 'Report GitHub Actions build status on Slack'
 branding:
   icon: message-square
@@ -24,5 +24,5 @@ outputs:
   message_id:
     description: 'The unique timestamp identifier of the Slack message sent'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
